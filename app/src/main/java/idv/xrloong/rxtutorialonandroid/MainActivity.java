@@ -15,6 +15,7 @@ import android.view.View;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import idv.xrloong.rxtutorialonandroid.fragment.ObserverFragment;
 import idv.xrloong.rxtutorialonandroid.fragment.SimpleFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -87,6 +88,11 @@ public class MainActivity extends AppCompatActivity
             getFragmentManager()
                     .beginTransaction()
                     .replace(R.id.content_main, SimpleFragment.newInstance())
+                    .commit();
+        } else if (id == R.id.nav_observer) {
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.content_main, ObserverFragment.newInstance())
                     .commit();
         }
 

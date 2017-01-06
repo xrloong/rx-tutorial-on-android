@@ -28,7 +28,7 @@ public class ObserverFragment extends Fragment {
         private String mFamilyName;
         private int mAge;
 
-        OnAgeChangedListener mOnAgeChangedListener;
+        private OnAgeChangedListener mOnAgeChangedListener;
         public interface OnAgeChangedListener {
             void onAgeChanged(int newAge);
         }
@@ -85,7 +85,7 @@ public class ObserverFragment extends Fragment {
         mUser.setOnAgeChangedListener(new User.OnAgeChangedListener() {
             @Override
             public void onAgeChanged(int newAge) {
-                mTextViewAge.setText(String.valueOf(user.getAge()));
+                mTextViewAge.setText(String.valueOf(newAge));
             }
         });
 

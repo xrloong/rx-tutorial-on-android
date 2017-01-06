@@ -15,6 +15,7 @@ import android.view.View;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import idv.xrloong.rxtutorialonandroid.fragment.SimpleFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -82,18 +83,11 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.nav_simple) {
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.content_main, SimpleFragment.newInstance())
+                    .commit();
         }
 
         mDrawerLayout.closeDrawer(GravityCompat.START);

@@ -1,0 +1,25 @@
+@startuml
+
+hide footbox
+title Reactive programming
+actor Client
+box "Source"
+participant Data
+participant Observable << (C,#ADD1B2) Observable >>
+end box
+
+Data -> Observable : create instance
+
+Client -> Data : getObservable()
+Data --> Client : Observable
+Client -> Observable : subscribe()
+
+
+... Some ~~long delay~~ ...
+
+Observable -> Client : data changed
+activate Client
+Client -> Observable :
+deactivate Client
+@enduml
+

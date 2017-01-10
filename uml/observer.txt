@@ -1,0 +1,27 @@
+@startuml
+
+hide footbox
+title observer
+box "Client"
+actor Client
+participant Observer << (C,#ADD1B2) Observer >>
+end box
+
+Client -> Observer : create instance
+Client -> Observable : setObserver(observer)
+rnote over Observable: keep the observer
+
+
+... Some ~~long delay~~ ...
+
+Observable -> Observer : data changed
+activate Observer
+Observer -> Client : do action
+activate Client
+Client --> Observer :
+deactivate Client
+Observer --> Observable :
+deactivate Observer
+
+@enduml
+

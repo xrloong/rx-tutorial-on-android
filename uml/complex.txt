@@ -1,0 +1,12 @@
+@startuml
+
+object Controler
+
+Controler o-- Data1
+Data1 *-- Data2
+Controler o-- View1
+View1 *-- View2
+
+@enduml
+
+

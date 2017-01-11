@@ -1,0 +1,23 @@
+@startuml
+
+autonumber
+hide footbox
+
+participant Controller
+
+Controller -> Data1 : getObservable()
+Data1 -> Data2 : getObservable()
+Data2 --> Data1 : observable
+Data1 --> Controller : observable
+Controller -> View1 : setObservable(observable)
+View1 -> View2 : setObservable(observable)
+View2 -> View2 : observable.subscribe()
+
+... Some ~~long delay~~ ...
+
+Data2 -> View2 : event triggerred
+View2 -> View2 : do action
+
+@enduml
+
+
